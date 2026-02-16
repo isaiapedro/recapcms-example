@@ -1,0 +1,15 @@
+# The generic build settings
+[build]
+  # 1. The Command:
+  # Netlify will run this in the Linux terminal.
+  # We use 'python3' to be explicit (though 'python' usually works too).
+  command = "python3 build_index.py"
+
+  # 2. The Publish Directory:
+  # Where are the files we want to show the world?
+  # Since index.html is in the root, we put "."
+  publish = "."
+
+# (Optional) Environment settings
+[build.environment]
+  PYTHON_VERSION = "3.8" # You can pin a version if you want stability
