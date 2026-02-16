@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main # Ensure this matches your default branch
+
+media_folder: "images/uploads" # Where images will be saved in the repo
+public_folder: "/images/uploads" # The path used in the HTML
+
+collections:
+  - name: "portfolio"
+    label: "Portfolio Images"
+    folder: "content/portfolio" # Where the data files go
+    create: true # Allows adding new items
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Description", name: "body", widget: "markdown" }

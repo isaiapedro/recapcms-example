@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Data Engineering Portfolio</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+        .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        img { width: 100%; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Portfolio</h1>
+    <div id="gallery" class="gallery">
+        <p>Login at /admin to upload your first image!</p>
+    </div>
+
+    <script>
+      // Redirect to admin page after login
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+</body>
+</html>
